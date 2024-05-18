@@ -1,0 +1,16 @@
+#+title: Emacs configuration
+#+author: Aaron Kunde
+#+email: aaron.kunde@web.de
+Settings and Descriptions of the Emacs initialization file ~~/.emacs.d/init.el~.
+
+To use this configuration file properly
+1. Make sure, you don't have a file ~~/.emacs~ in your way:
+   #+begin_src shell
+     mv -i ~/.emacs ~/.emacs.bak
+   #+end_src
+2. Backup your existing init-file:
+   #+begin_src shell
+     mv -i ~/.emacs.d/init.el ~/.emacs.d/init.el.bak
+   #+end_src
+
+The configuration is described in [[file:init.org][init.org]].
