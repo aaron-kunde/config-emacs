@@ -50,3 +50,19 @@ Enable displaying of file sizes in the mode line:
 #+begin_src emacs-lisp
   (setq size-indication-mode t)
 #+end_src
+
+* General appearance
+Themes are not used. Only adjustments to the standard faces are made.
+
+** Customise default face
+Just revert foreground and background colour:
+#+begin_src emacs-lisp
+  (set-face-background 'default "black")
+  (set-face-foreground 'default "white")
+#+end_src
+
+** Customise cursor face
+Make the cursor green:
+#+begin_src emacs-lisp
+  (set-face-background 'cursor "green")
+#+end_src
