@@ -1,5 +1,5 @@
 :PROPERTIES:
-:header-args:emacs-lisp: :tangle yes
+:header-args:emacs-lisp: :tangle yes :padline no
 :END:
 
 * Custom set configurations
@@ -23,4 +23,30 @@ Variables or faces can be set by [[https://www.gnu.org/software/emacs/manual/htm
 Disable splash screen at startup:
 #+begin_src emacs-lisp
   (setq inhibit-startup-screen t)
+#+end_src
+
+* General functionalities
+Disable annoying sounds, like when hitting TAB and no completion can be found:
+#+begin_src emacs-lisp
+  (setq ring-bell-function 'ignore)
+#+end_src
+
+Disable tool bar:
+#+begin_src emacs-lisp
+  (tool-bar-mode -1)
+#+end_src
+
+Enable to show the current column number in the mode line:
+#+begin_src emacs-lisp
+  (setq column-number-mode t)
+#+end_src
+
+Based on the [[https://www.emacswiki.org/emacs/LineNumbers][Emacs Wiki]], enable display of line numbers in the buffer for programming modes:
+#+begin_src emacs-lisp
+  (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+#+end_src
+
+Enable displaying of file sizes in the mode line:
+#+begin_src emacs-lisp
+  (setq size-indication-mode t)
 #+end_src
