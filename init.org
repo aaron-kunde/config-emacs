@@ -1,0 +1,20 @@
+:PROPERTIES:
+:header-args:emacs-lisp: :tangle yes
+:END:
+
+* Custom set configurations
+Variables or faces can be set by [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Customization.html][Emacs Customize interface]]. Customization shall be set explicitly in this file. Therefore, the following code blocks should always be empty:
+#+begin_example emacs-lisp
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+#+end_example
