@@ -112,3 +112,19 @@ If gnu-elpa-keyring-update cannot be installed, because of expired signatures, t
 #+begin_src emacs-lisp :tangle no
   (setq package-check-signature nil)
 #+end_src
+
+* Use /counsel/, /ivy/ and /swiper/
+Install and configure [[https://github.com/abo-abo/swiper][counsel]] along with ivy and swiper:
+#+begin_src emacs-lisp
+  (use-package counsel
+    :bind
+    ("C-s" . swiper-isearch)
+    ("C-x b" . counsel-switch-buffer)
+    :config (counsel-mode))
+#+end_src
+
+Install [[https://github.com/Yevgnen/ivy-rich][ivy-rich]], to have more [[https://oremacs.com/swiper/][actions]] with ~M-o~ and better UI in the minibuffer for ivy completions:
+#+begin_src emacs-lisp
+  (use-package ivy-rich
+    :config (ivy-rich-mode))
+#+end_src

@@ -17,3 +17,10 @@
 (eval-when-compile (require 'use-package))
 (use-package gnu-elpa-keyring-update
   :config  (setq package-check-signature 'allow-unsigned))
+(use-package counsel
+  :bind
+  ("C-s" . swiper-isearch)
+  ("C-x b" . counsel-switch-buffer)
+  :config (counsel-mode))
+(use-package ivy-rich
+  :config (ivy-rich-mode))
