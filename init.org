@@ -89,3 +89,14 @@ Refresh package cache if not done yet:
 #+begin_src emacs-lisp
   (unless package-archive-contents (package-refresh-contents))
 #+end_src
+
+* Use /use-package/
+Install [[https://github.com/jwiegley/use-package][use-package]], if not done yet:
+#+begin_src emacs-lisp
+  (unless (package-installed-p 'use-package) (package-install 'use-package))
+#+end_src
+
+Initialise use-package:
+#+begin_src emacs-lisp
+  (eval-when-compile (require 'use-package))
+#+end_src
