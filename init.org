@@ -72,7 +72,8 @@ Make the cursor green:
   (set-face-background 'cursor "green")
 #+end_src
 
-* General package management
+* Package management
+** General package management
 Define the package archives to use:
 #+begin_src emacs-lisp
   (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -95,7 +96,7 @@ Refresh package cache if not done yet:
   (unless package-archive-contents (package-refresh-contents))
 #+end_src
 
-* Use /use-package/
+** Use /use-package/
 Install [[https://github.com/jwiegley/use-package][use-package]], if not done yet:
 #+begin_src emacs-lisp
   (unless (package-installed-p 'use-package) (package-install 'use-package))
@@ -106,7 +107,7 @@ Initialise use-package:
   (eval-when-compile (require 'use-package))
 #+end_src
 
-* Add Signature management
+** Add Signature management
 Install [[https://elpa.gnu.org/packages/gnu-elpa-keyring-update.html][gnu-elpa-keyring-update]] to keep GPG keyring  or GNU ELPA up to date and keep the default behaviour:
 #+begin_src emacs-lisp
   (use-package gnu-elpa-keyring-update
@@ -174,3 +175,4 @@ Install [[https://magit.vc/][Magit]] to have a nice Git integration:
 #+begin_src emacs-lisp
   (use-package magit)
 #+end_src
+
