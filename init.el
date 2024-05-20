@@ -46,3 +46,4 @@
   :bind-keymap ("C-c p" . projectile-command-map))
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
+(use-package magit)

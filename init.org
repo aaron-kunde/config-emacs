@@ -168,3 +168,9 @@ Use [[https://github.com/ericdanan/counsel-projectile][counsel-projectile]] to h
   (use-package counsel-projectile
     :config (counsel-projectile-mode))
 #+end_src
+
+* Use /Magit/
+Install [[https://magit.vc/][Magit]] to have a nice Git integration:
+#+begin_src emacs-lisp
+  (use-package magit)
+#+end_src
