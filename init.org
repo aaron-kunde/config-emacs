@@ -154,3 +154,17 @@ Install [[https://github.com/Wilfred/helpful][helpful]] to enhance Emacs help wi
     ([remap describe-key] . helpful-key)
     ("C-h C-x d" . helpful-at-point))
 #+end_src
+
+* Use /projectile/
+Install [[https://github.com/bbatsov/projectile][projectile]]:
+#+begin_src emacs-lisp
+  (use-package projectile
+    :config (projectile-mode)
+    :bind-keymap ("C-c p" . projectile-command-map))
+#+end_src
+
+Use [[https://github.com/ericdanan/counsel-projectile][counsel-projectile]] to have integration with counsel:
+#+begin_src emacs-lisp
+  (use-package counsel-projectile
+    :config (counsel-projectile-mode))
+#+end_src
