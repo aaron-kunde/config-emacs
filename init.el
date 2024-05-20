@@ -15,3 +15,5 @@
 (unless package-archive-contents (package-refresh-contents))
 (unless (package-installed-p 'use-package) (package-install 'use-package))
 (eval-when-compile (require 'use-package))
+(use-package gnu-elpa-keyring-update
+  :config  (setq package-check-signature 'allow-unsigned))

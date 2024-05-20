@@ -100,3 +100,15 @@ Initialise use-package:
 #+begin_src emacs-lisp
   (eval-when-compile (require 'use-package))
 #+end_src
+
+* Add Signature management
+Install [[https://elpa.gnu.org/packages/gnu-elpa-keyring-update.html][gnu-elpa-keyring-update]] to keep GPG keyring  or GNU ELPA up to date and keep the default behaviour:
+#+begin_src emacs-lisp
+  (use-package gnu-elpa-keyring-update
+    :config  (setq package-check-signature 'allow-unsigned))
+#+end_src
+
+If gnu-elpa-keyring-update cannot be installed, because of expired signatures, the signature check can be temporary disabled, like described in the [[https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1970090.html][Debian mailing list]]:
+#+begin_src emacs-lisp :tangle no
+  (setq package-check-signature nil)
+#+end_src
