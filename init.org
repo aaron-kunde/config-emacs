@@ -205,3 +205,9 @@ Since Org mode is for editing texts, visual line mode with word wrap is enabled:
        (shell . t)))
     :hook (org-mode . visual-line-mode))
 #+end_src
+
+** Use /csv-mode/
+Install [[https://elpa.gnu.org/packages/csv-mode.html][csv-mode]]:
+#+begin_src emacs-lisp
+  (use-package csv-mode)
+#+end_src

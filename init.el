@@ -57,3 +57,4 @@
    '((emacs-lisp . t)
      (shell . t)))
   :hook (org-mode . visual-line-mode))
+(use-package csv-mode)
