@@ -51,6 +51,11 @@ Enable displaying of file sizes in the mode line:
   (setq size-indication-mode t)
 #+end_src
 
+Set language environment to German:
+#+begin_src emacs-lisp
+  (set-locale-environment "de_DE.utf-8")
+#+end_src
+
 * General appearance
 Themes are not used. Only adjustments to the standard faces are made.
 
