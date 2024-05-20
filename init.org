@@ -66,3 +66,26 @@ Make the cursor green:
 #+begin_src emacs-lisp
   (set-face-background 'cursor "green")
 #+end_src
+
+* General package management
+Define the package archives to use:
+#+begin_src emacs-lisp
+  (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+			   ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+			   ("melpa" . "https://melpa.org/packages/")))
+#+end_src
+
+Ensure newly installed packages are downloaded and installed properly before running:
+#+begin_src emacs-lisp
+  (setq use-package-always-ensure t)
+#+end_src
+
+Initialise package variables
+#+begin_src emacs-lisp
+  (package-initialize)
+#+end_src
+
+Refresh package cache if not done yet:
+#+begin_src emacs-lisp
+  (unless package-archive-contents (package-refresh-contents))
+#+end_src
