@@ -47,3 +47,13 @@
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
 (use-package magit)
+(use-package org
+  :custom
+  (org-agenda-files
+   (with-temp-buffer (insert-file-contents
+		      (concat user-emacs-directory "org-agenda-files"))
+		     (split-string (buffer-string) "\n" t)))
+  (org-babel-load-languages
+   '((emacs-lisp . t)
+     (shell . t)))
+  :hook (org-mode . visual-line-mode))

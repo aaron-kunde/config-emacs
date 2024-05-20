@@ -176,3 +176,32 @@ Install [[https://magit.vc/][Magit]] to have a nice Git integration:
   (use-package magit)
 #+end_src
 
+* Editing modes
+
+** Use /Org mode/
+Configuration of Org mode includes several steps:
+
+*** Agenda files
+The list of agenda files is specific to different environments and user accounts. Each user account has to define its own list of files as a textfile and put it under ~/.emacs.d/org-agenda-files~, like the following example:
+#+begin_example
+~/Path to 1st directory/agenda file 1
+~/Path to 1st directory/agenda file 2
+~/Path to 2nd directory/agenda file 1
+...
+#+end_example
+This file is read by a function and inserted into the variable ~org-agenda-files~.
+
+*** Enable visual-line-mode
+Since Org mode is for editing texts, visual line mode with word wrap is enabled:
+#+begin_src emacs-lisp
+  (use-package org
+    :custom
+    (org-agenda-files
+     (with-temp-buffer (insert-file-contents
+			(concat user-emacs-directory "org-agenda-files"))
+		       (split-string (buffer-string) "\n" t)))
+    (org-babel-load-languages
+     '((emacs-lisp . t)
+       (shell . t)))
+    :hook (org-mode . visual-line-mode))
+#+end_src
