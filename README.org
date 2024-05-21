@@ -12,5 +12,9 @@ To use this configuration file properly
    #+begin_src shell
      mv -i ~/.emacs.d/init.el ~/.emacs.d/init.el.bak
    #+end_src
+3. Copy the checked out file to the ~user-emacs-directory~:
+   #+begin_src shell
+     cp init.el ~/.emacs.d/
+   #+end_src
 
 The configuration is described in [[file:init.org][init.org]].
