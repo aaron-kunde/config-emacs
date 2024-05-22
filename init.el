@@ -18,6 +18,8 @@
 (eval-when-compile (require 'use-package))
 (use-package gnu-elpa-keyring-update
   :config  (setq package-check-signature 'allow-unsigned))
+(use-package which-key
+  :config  (which-key-mode))
 (use-package counsel
   :bind
   ("C-s" . swiper-isearch)
