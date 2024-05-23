@@ -218,3 +218,9 @@ Install [[https://elpa.gnu.org/packages/csv-mode.html][csv-mode]]:
 #+begin_src emacs-lisp
   (use-package csv-mode)
 #+end_src
+
+** Use /yaml-mode/
+Install [[https://melpa.org/#/yaml-mode][yaml-mode]]:
+#+begin_src emacs-lisp
+  (use-package yaml-mode)
+#+end_src
