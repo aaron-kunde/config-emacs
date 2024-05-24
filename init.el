@@ -51,13 +51,14 @@
 (use-package magit)
 (use-package org
   :custom
-  (org-agenda-files
-   (with-temp-buffer (insert-file-contents
-		      (concat user-emacs-directory "org-agenda-files"))
-		     (split-string (buffer-string) "\n" t)))
+  (org-agenda-files "~/.emacs.d/org-agenda-files")
   (org-babel-load-languages
    '((emacs-lisp . t)
      (shell . t)))
+  :config
+  (let ((filename org-agenda-files))
+    (if (not (file-exists-p filename))
+	(make-empty-file filename)))
   :hook (org-mode . visual-line-mode))
 (use-package csv-mode)
 (use-package yaml-mode)

@@ -196,20 +196,21 @@ The list of agenda files is specific to different environments and user accounts
 ~/Path to 2nd directory/agenda file 1
 ...
 #+end_example
-This file is read by a function and inserted into the variable ~org-agenda-files~.
+If the file does not exist, it is created.
 
 *** Enable visual-line-mode
 Since Org mode is for editing texts, visual line mode with word wrap is enabled:
 #+begin_src emacs-lisp
   (use-package org
     :custom
-    (org-agenda-files
-     (with-temp-buffer (insert-file-contents
-			(concat user-emacs-directory "org-agenda-files"))
-		       (split-string (buffer-string) "\n" t)))
+    (org-agenda-files "~/.emacs.d/org-agenda-files")
     (org-babel-load-languages
      '((emacs-lisp . t)
        (shell . t)))
+    :config
+    (let ((filename org-agenda-files))
+      (if (not (file-exists-p filename))
+	  (make-empty-file filename)))
     :hook (org-mode . visual-line-mode))
 #+end_src
 
