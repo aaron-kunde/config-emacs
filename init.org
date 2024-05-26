@@ -72,6 +72,16 @@ Make the cursor green:
   (set-face-background 'cursor "green")
 #+end_src
 
+** Customize some Ediff faces
+Make some adjustment to the forground colors to increase readability:
+#+begin_src emacs-lisp
+  (set-face-foreground 'ediff-fine-diff-A "black")
+  (set-face-foreground 'ediff-fine-diff-Ancestor "black")
+  (set-face-foreground 'ediff-current-diff-C "black")
+  (set-face-foreground 'ediff-fine-diff-B "black")
+  (set-face-foreground 'ediff-fine-diff-C "black")
+#+end_src
+
 * Package management
 ** General package management
 Define the package archives to use:
