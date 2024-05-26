@@ -235,3 +235,9 @@ Install [[https://melpa.org/#/yaml-mode][yaml-mode]]:
 #+begin_src emacs-lisp
   (use-package yaml-mode)
 #+end_src
+
+** Use /bats-mode/
+Install [[https://github.com/dougm/bats-mode][bats-mode]]:
+#+begin_src emacs-lisp
+  (use-package bats-mode)
+#+end_src

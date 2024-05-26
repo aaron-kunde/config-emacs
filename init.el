@@ -67,3 +67,4 @@
   :hook (org-mode . visual-line-mode))
 (use-package csv-mode)
 (use-package yaml-mode)
+(use-package bats-mode)
