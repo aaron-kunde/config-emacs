@@ -1,3 +1,6 @@
+:PROPERTIES:
+:header-args: :results silent
+:END:
 #+title: Emacs configuration
 #+author: Aaron Kunde
 #+email: aaron.kunde@web.de
