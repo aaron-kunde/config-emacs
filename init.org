@@ -272,3 +272,9 @@ Install [[https://github.com/skuro/plantuml-mode][plantuml-mode]] without [[http
     :config
     (setq plantuml-output-type "png"))
 #+end_src
+
+** Use /go-mode/
+Install [[https://github.com/dominikh/go-mode.el][go-mode]] further descriped in [[https://www.emacswiki.org/emacs/GoLangMode][Go Lang Mode]]:
+#+begin_src emacs-lisp
+  (use-package go-mode)
+#+end_src

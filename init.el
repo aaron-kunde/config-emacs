@@ -90,3 +90,4 @@
   (plantuml-jar-path "~/opt/plantuml.jar")
   :config
   (setq plantuml-output-type "png"))
+(use-package go-mode)
