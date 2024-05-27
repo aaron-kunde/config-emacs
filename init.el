@@ -83,3 +83,10 @@
 (use-package csv-mode)
 (use-package yaml-mode)
 (use-package bats-mode)
+(use-package plantuml-mode
+  :custom
+  (plantuml-default-exec-mode 'jar)
+  (plantuml-indent-level 2)
+  (plantuml-jar-path "~/opt/plantuml.jar")
+  :config
+  (setq plantuml-output-type "png"))
