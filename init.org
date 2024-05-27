@@ -72,16 +72,6 @@ Make the cursor green:
   (set-face-background 'cursor "green")
 #+end_src
 
-** Customize some Ediff faces
-Make some adjustment to the forground colors to increase readability:
-#+begin_src emacs-lisp
-  (set-face-foreground 'ediff-fine-diff-A "black")
-  (set-face-foreground 'ediff-fine-diff-Ancestor "black")
-  (set-face-foreground 'ediff-current-diff-C "black")
-  (set-face-foreground 'ediff-fine-diff-B "black")
-  (set-face-foreground 'ediff-fine-diff-C "black")
-#+end_src
-
 * Package management
 ** General package management
 Define the package archives to use:
@@ -193,8 +183,32 @@ Install [[https://magit.vc/][Magit]] to have a nice Git integration:
   (use-package magit)
 #+end_src
 
-* Editing modes
+* Customize /Ediff/
+Make some adjustment to the forground colors to increase readability on dark themes:
+#+begin_src emacs-lisp
+  (use-package ediff
+    :defer t
+    :custom-face
+    (ediff-current-diff-C
+     ((t (:extend t :background "#888833" :foreground "black"))))
+    (ediff-even-diff-A
+     ((t (:extend t :background "dark grey" :distant-foreground "White"
+		  :foreground "black"))))
+    (ediff-even-diff-C
+     ((t (:extend t :background "dark grey" :distant-foreground "black"
+		  :foreground "black"))))
+    (ediff-fine-diff-Ancestor
+     ((t (:background "#009591" :foreground "black"))))
+    (ediff-fine-diff-B
+     ((t (:background "#22aa22" :foreground "black"))))
+    (ediff-fine-diff-C
+     ((t (:background "#aaaa22" :foreground "black"))))
+    (ediff-odd-diff-B
+     ((t (:extend t :background "dark grey" :distant-foreground "White"
+		  :foreground "black")))))
+ #+end_src
 
+* Editing modes
 ** Use /Org mode/
 Configuration of Org mode includes several steps:
 

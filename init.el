@@ -8,11 +8,6 @@
 (set-face-background 'default "black")
 (set-face-foreground 'default "white")
 (set-face-background 'cursor "green")
-(set-face-foreground 'ediff-fine-diff-A "black")
-(set-face-foreground 'ediff-fine-diff-Ancestor "black")
-(set-face-foreground 'ediff-current-diff-C "black")
-(set-face-foreground 'ediff-fine-diff-B "black")
-(set-face-foreground 'ediff-fine-diff-C "black")
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
 			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")
 			 ("melpa" . "https://melpa.org/packages/")))
@@ -54,6 +49,26 @@
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
 (use-package magit)
+(use-package ediff
+  :defer t
+  :custom-face
+  (ediff-current-diff-C
+   ((t (:extend t :background "#888833" :foreground "black"))))
+  (ediff-even-diff-A
+   ((t (:extend t :background "dark grey" :distant-foreground "White"
+		:foreground "black"))))
+  (ediff-even-diff-C
+   ((t (:extend t :background "dark grey" :distant-foreground "black"
+		:foreground "black"))))
+  (ediff-fine-diff-Ancestor
+   ((t (:background "#009591" :foreground "black"))))
+  (ediff-fine-diff-B
+   ((t (:background "#22aa22" :foreground "black"))))
+  (ediff-fine-diff-C
+   ((t (:background "#aaaa22" :foreground "black"))))
+  (ediff-odd-diff-B
+   ((t (:extend t :background "dark grey" :distant-foreground "White"
+		:foreground "black")))))
 (use-package org
   :custom
   (org-agenda-files "~/.emacs.d/org-agenda-files")
