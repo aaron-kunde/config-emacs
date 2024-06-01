@@ -52,23 +52,16 @@
 (use-package ediff
   :defer t
   :custom-face
-  (ediff-current-diff-C
-   ((t (:extend t :background "#888833" :foreground "black"))))
+  (ediff-current-diff-A ((t (:extend t :background "#4d3333"))))
+  (ediff-current-diff-B ((t (:extend t :background "#334d33"))))
   (ediff-even-diff-A
-   ((t (:extend t :background "dark grey" :distant-foreground "White"
-		:foreground "black"))))
+    ((t (:extend t :background "#555555" :distant-foreground "White"))))
   (ediff-even-diff-C
-   ((t (:extend t :background "dark grey" :distant-foreground "black"
-		:foreground "black"))))
-  (ediff-fine-diff-Ancestor
-   ((t (:background "#009591" :foreground "black"))))
-  (ediff-fine-diff-B
-   ((t (:background "#22aa22" :foreground "black"))))
-  (ediff-fine-diff-C
-   ((t (:background "#aaaa22" :foreground "black"))))
+    ((t (:extend t :background "#555555" :distant-foreground "White"))))
   (ediff-odd-diff-B
-   ((t (:extend t :background "dark grey" :distant-foreground "White"
-		:foreground "black")))))
+   ((t (:extend t :background "#555555" :distant-foreground "White"))))
+  (ediff-fine-diff-A ((t (:extend t :background "#660000"))))
+  (ediff-fine-diff-B ((t (:extend t :background "#006600")))))
 (use-package org
   :custom
   (org-agenda-files "~/.emacs.d/org-agenda-files")

@@ -185,27 +185,29 @@ Install [[https://magit.vc/][Magit]] to have a nice Git integration:
 
 * Customize /Ediff/
 Make some adjustment to the forground colors to increase readability on dark themes:
+
+| Original color         | Saturation | Lightness | New colour | Saturation | Lightness |
+|------------------------+------------+-----------+------------+------------+-----------|
+| ~#a9a9a9~ (/DarkGrey/) | 66 %%      | 0 %       | ~#555555~  | 33 %       | 0 %       |
+| ~#335533~              | 25 %       | 27 %      | ~#334d33~  | 20 %       | 25 %      |
+| ~#553333~              | 25 %       | 27 %      | ~#4d3333~  | 20 %       | 25 %      |
+| ~#aa2222~              | 67 %       | 40 %      | ~#660000~  | 100 %      | 20 %      |
+| ~#22aa22~              | 67 %       | 40 %      | ~#006600~  | 100 %      | 20 %      |
+
 #+begin_src emacs-lisp
   (use-package ediff
     :defer t
     :custom-face
-    (ediff-current-diff-C
-     ((t (:extend t :background "#888833" :foreground "black"))))
+    (ediff-current-diff-A ((t (:extend t :background "#4d3333"))))
+    (ediff-current-diff-B ((t (:extend t :background "#334d33"))))
     (ediff-even-diff-A
-     ((t (:extend t :background "dark grey" :distant-foreground "White"
-		  :foreground "black"))))
+      ((t (:extend t :background "#555555" :distant-foreground "White"))))
     (ediff-even-diff-C
-     ((t (:extend t :background "dark grey" :distant-foreground "black"
-		  :foreground "black"))))
-    (ediff-fine-diff-Ancestor
-     ((t (:background "#009591" :foreground "black"))))
-    (ediff-fine-diff-B
-     ((t (:background "#22aa22" :foreground "black"))))
-    (ediff-fine-diff-C
-     ((t (:background "#aaaa22" :foreground "black"))))
+      ((t (:extend t :background "#555555" :distant-foreground "White"))))
     (ediff-odd-diff-B
-     ((t (:extend t :background "dark grey" :distant-foreground "White"
-		  :foreground "black")))))
+     ((t (:extend t :background "#555555" :distant-foreground "White"))))
+    (ediff-fine-diff-A ((t (:extend t :background "#660000"))))
+    (ediff-fine-diff-B ((t (:extend t :background "#006600")))))
  #+end_src
 
 * Editing modes
