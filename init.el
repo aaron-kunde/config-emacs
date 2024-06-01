@@ -74,6 +74,7 @@
   (org-agenda-files "~/.emacs.d/org-agenda-files")
   (org-babel-load-languages
    '((emacs-lisp . t)
+     (org . t)
      (shell . t)))
   :config
   (let ((filename org-agenda-files))
