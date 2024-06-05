@@ -85,3 +85,4 @@
   :config
   (setq plantuml-output-type "png"))
 (use-package go-mode)
+(use-package markdown-mode)
