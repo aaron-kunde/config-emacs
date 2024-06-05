@@ -281,3 +281,9 @@ Install [[https://github.com/dominikh/go-mode.el][go-mode]] further descriped in
 #+begin_src emacs-lisp
   (use-package go-mode)
 #+end_src
+
+** Use /markdown-mode/
+Install [[https://jblevins.org/projects/markdown-mode/][markdown-mode]]:
+#+begin_src emacs-lisp
+  (use-package markdown-mode)
+#+end_src
