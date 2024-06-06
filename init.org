@@ -119,6 +119,14 @@ If gnu-elpa-keyring-update cannot be installed, because of expired signatures, t
   (setq package-check-signature nil)
 #+end_src
 
+* Customize /EasyPG/
+Configuring EasyPG, like it is described in the [[https://www.gnu.org/software/emacs/manual/html_node/epa/GnuPG-Pinentry.html][Emacs manual]]. This way, the passphase is asced in the minibuffer:
+#+begin_src emacs-lisp
+  (use-package epg
+    :custom
+    (epg-pinentry-mode 'loopback))
+#+end_src
+
 * Use /which-key/
 Install and counfigure [[https://github.com/justbur/emacs-which-key][which-key]] to display current awailable key bindings while typing:
 #+begin_src emacs-lisp

@@ -18,6 +18,9 @@
 (eval-when-compile (require 'use-package))
 (use-package gnu-elpa-keyring-update
   :config  (setq package-check-signature 'allow-unsigned))
+(use-package epg
+  :custom
+  (epg-pinentry-mode 'loopback))
 (use-package which-key
   :config  (which-key-mode))
 (use-package counsel
