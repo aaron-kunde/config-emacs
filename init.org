@@ -196,11 +196,13 @@ Make some adjustment to the forground colors to increase readability on dark the
 
 | Original color         | Saturation | Lightness | New colour | Saturation | Lightness |
 |------------------------+------------+-----------+------------+------------+-----------|
-| ~#a9a9a9~ (/DarkGrey/) | 66 %%      | 0 %       | ~#555555~  | 33 %       | 0 %       |
+| ~#a9a9a9~ (/DarkGrey/) | 66 %       | 0 %       | ~#555555~  | 33 %       | 0 %       |
 | ~#335533~              | 25 %       | 27 %      | ~#334d33~  | 20 %       | 25 %      |
 | ~#553333~              | 25 %       | 27 %      | ~#4d3333~  | 20 %       | 25 %      |
+| ~#888833~              | 45 %       | 37 %      | ~#4d4d33~  | 20 %       | 25 %      |
 | ~#aa2222~              | 67 %       | 40 %      | ~#660000~  | 100 %      | 20 %      |
 | ~#22aa22~              | 67 %       | 40 %      | ~#006600~  | 100 %      | 20 %      |
+| ~#aaaa22~              | 67 %       | 40 %      | ~#666600~  | 100 %      | 20 %      |
 
 #+begin_src emacs-lisp
   (use-package ediff
@@ -208,6 +210,7 @@ Make some adjustment to the forground colors to increase readability on dark the
     :custom-face
     (ediff-current-diff-A ((t (:extend t :background "#4d3333"))))
     (ediff-current-diff-B ((t (:extend t :background "#334d33"))))
+    (ediff-current-diff-C ((t (:extend t :background "#4d4d33"))))
     (ediff-even-diff-A
       ((t (:extend t :background "#555555" :distant-foreground "White"))))
     (ediff-even-diff-C
@@ -215,8 +218,9 @@ Make some adjustment to the forground colors to increase readability on dark the
     (ediff-odd-diff-B
      ((t (:extend t :background "#555555" :distant-foreground "White"))))
     (ediff-fine-diff-A ((t (:extend t :background "#660000"))))
-    (ediff-fine-diff-B ((t (:extend t :background "#006600")))))
- #+end_src
+    (ediff-fine-diff-B ((t (:extend t :background "#006600"))))
+    (ediff-fine-diff-C ((t (:extend t :background "#666600")))))
+#+end_src
 
 * Editing modes
 ** Use /Org mode/

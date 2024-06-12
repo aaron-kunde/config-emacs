@@ -57,6 +57,7 @@
   :custom-face
   (ediff-current-diff-A ((t (:extend t :background "#4d3333"))))
   (ediff-current-diff-B ((t (:extend t :background "#334d33"))))
+  (ediff-current-diff-C ((t (:extend t :background "#4d4d33"))))
   (ediff-even-diff-A
     ((t (:extend t :background "#555555" :distant-foreground "White"))))
   (ediff-even-diff-C
@@ -64,7 +65,8 @@
   (ediff-odd-diff-B
    ((t (:extend t :background "#555555" :distant-foreground "White"))))
   (ediff-fine-diff-A ((t (:extend t :background "#660000"))))
-  (ediff-fine-diff-B ((t (:extend t :background "#006600")))))
+  (ediff-fine-diff-B ((t (:extend t :background "#006600"))))
+  (ediff-fine-diff-C ((t (:extend t :background "#666600")))))
 (use-package org
   :custom
   (org-agenda-files "~/.emacs.d/org-agenda-files")
