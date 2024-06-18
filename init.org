@@ -299,3 +299,9 @@ Install [[https://jblevins.org/projects/markdown-mode/][markdown-mode]]:
 #+begin_src emacs-lisp
   (use-package markdown-mode)
 #+end_src
+
+** Use /groovy-mode/
+Intall [[https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes][standalone groovy-mode]]:
+#+begin_src emacs-lisp
+  (use-package groovy-mode)
+#+end_src
