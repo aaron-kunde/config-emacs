@@ -92,3 +92,4 @@
 (use-package go-mode)
 (use-package markdown-mode)
 (use-package groovy-mode)
+(use-package powershell)

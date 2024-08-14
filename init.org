@@ -305,3 +305,9 @@ Intall [[https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes][standalone gr
 #+begin_src emacs-lisp
   (use-package groovy-mode)
 #+end_src
+
+** Use /powershell/
+Install [[https://github.com/jschaf/powershell.el][Mode for powershell]]:
+#+begin_src emacs-lisp
+  (use-package powershell)
+#+end_src
