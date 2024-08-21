@@ -317,3 +317,10 @@ Install [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]]:
 #+begin_src emacs-lisp
   (use-package dockerfile-mode)
 #+end_src
+
+** Use /docker-compose-mode/
+Install [[https://github.com/meqif/docker-compose-mode][docker-compose-mode]]:
+#+begin_src emacs-lisp
+  (use-package docker-compose-mode)
+#+end_src
+

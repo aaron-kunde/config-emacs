@@ -94,3 +94,4 @@
 (use-package groovy-mode)
 (use-package powershell)
 (use-package dockerfile-mode)
+(use-package docker-compose-mode)
