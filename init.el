@@ -93,3 +93,4 @@
 (use-package markdown-mode)
 (use-package groovy-mode)
 (use-package powershell)
+(use-package dockerfile-mode)

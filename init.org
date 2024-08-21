@@ -311,3 +311,9 @@ Install [[https://github.com/jschaf/powershell.el][Mode for powershell]]:
 #+begin_src emacs-lisp
   (use-package powershell)
 #+end_src
+
+** Use /dockerfile-mode/
+Install [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]]:
+#+begin_src emacs-lisp
+  (use-package dockerfile-mode)
+#+end_src
