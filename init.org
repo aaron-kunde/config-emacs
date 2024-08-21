@@ -324,3 +324,9 @@ Install [[https://github.com/meqif/docker-compose-mode][docker-compose-mode]]:
   (use-package docker-compose-mode)
 #+end_src
 
+** Use /json-mode/
+Install [[https://github.com/json-emacs/json-mode][json-mode]]:
+#+begin_src emacs-lisp
+  (use-package json-mode)
+#+end_src
+

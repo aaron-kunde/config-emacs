@@ -95,3 +95,4 @@
 (use-package powershell)
 (use-package dockerfile-mode)
 (use-package docker-compose-mode)
+(use-package json-mode)
