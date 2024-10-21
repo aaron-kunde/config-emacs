@@ -96,3 +96,4 @@
 (use-package dockerfile-mode)
 (use-package docker-compose-mode)
 (use-package json-mode)
+(use-package adoc-mode)

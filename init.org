@@ -330,3 +330,8 @@ Install [[https://github.com/json-emacs/json-mode][json-mode]]:
   (use-package json-mode)
 #+end_src
 
+** Use /adoc-mode/
+Install [[https://github.com/bbatsov/adoc-mode/][adoc-mode]]:
+#+begin_src emacs-lisp
+  (use-package adoc-mode)
+#+end_src
