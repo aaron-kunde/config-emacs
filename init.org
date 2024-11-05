@@ -86,7 +86,7 @@ Ensure newly installed packages are downloaded and installed properly before run
   (setq use-package-always-ensure t)
 #+end_src
 
-Initialise package variables
+Initialise package variables:
 #+begin_src emacs-lisp
   (package-initialize)
 #+end_src
@@ -102,7 +102,7 @@ Install [[https://github.com/jwiegley/use-package][use-package]], if not done ye
   (unless (package-installed-p 'use-package) (package-install 'use-package))
 #+end_src
 
-Initialise use-package:
+Initialise /use-package/:
 #+begin_src emacs-lisp
   (eval-when-compile (require 'use-package))
 #+end_src
@@ -114,7 +114,7 @@ Install [[https://elpa.gnu.org/packages/gnu-elpa-keyring-update.html][gnu-elpa-k
     :config  (setq package-check-signature 'allow-unsigned))
 #+end_src
 
-If gnu-elpa-keyring-update cannot be installed, because of expired signatures, the signature check can be temporary disabled, like described in the [[https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1970090.html][Debian mailing list]]:
+*Note*: If /gnu-elpa-keyring-update/ cannot be installed, because of expired signatures, the signature check can be temporary disabled, like described in the [[https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1970090.html][Debian mailing list]]:
 #+begin_src emacs-lisp :tangle no
   (setq package-check-signature nil)
 #+end_src
@@ -179,7 +179,7 @@ Install [[https://github.com/bbatsov/projectile][projectile]]:
     :bind-keymap ("C-c p" . projectile-command-map))
 #+end_src
 
-Use [[https://github.com/ericdanan/counsel-projectile][counsel-projectile]] to have integration with counsel:
+Integrate /projectile/ with [[* Use /counsel/][counsel]]:
 #+begin_src emacs-lisp
   (use-package counsel-projectile
     :config (counsel-projectile-mode))
@@ -224,8 +224,6 @@ Make some adjustment to the forground colors to increase readability on dark the
 
 * Editing modes
 ** Use /Org mode/
-Configuration of Org mode includes several steps:
-
 *** Agenda files
 The list of agenda files is specific to different environments and user accounts. Each user account has to define its own list of files in a textfile ~org-agenda-files~ and put this in the user-specific emacs configuration directory (default: ~/.emacs.d~). The file ~org-agenda-files~ should like the following example:
 #+begin_example
@@ -236,12 +234,12 @@ The list of agenda files is specific to different environments and user accounts
 #+end_example
 If the file does not exist, it is created during startup.
 
-*** Enable visual-line-mode
+*** Enable /visual-line-mode/
 Since Org mode is for editing texts, visual line mode with word wrap is enabled:
 
 *** Integrate with PlantUML
 Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.html][PlantUML Code Blocks in Babel on Org Mode]] and [[https://plantuml.com/emacs][Integration with Emacs on PlantUML]]:
-1. Setting the variable ~org-plantuml-jar-path~ to the same value as ~plantuml-jar-path~, which is desribed and set in [[* Use /PlantUML mode/][/PlantUML mode/ configuration]].
+1. Setting the variable ~org-plantuml-jar-path~ to the same value as ~plantuml-jar-path~, which is desribed and set in [[* Use /PlantUML mode/][PlantUML mode configuration]].
 2. Adding ~plantuml~ to the supported languages for [[https://orgmode.org/worg/org-contrib/babel/intro.html][Babel]].
 
 #+begin_src emacs-lisp
