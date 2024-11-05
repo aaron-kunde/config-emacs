@@ -238,13 +238,21 @@ If the file does not exist, it is created during startup.
 
 *** Enable visual-line-mode
 Since Org mode is for editing texts, visual line mode with word wrap is enabled:
+
+*** Integrate with PlantUML
+Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.html][PlantUML Code Blocks in Babel on Org Mode]] and [[https://plantuml.com/emacs][Integration with Emacs on PlantUML]]:
+1. Setting the variable ~org-plantuml-jar-path~ to the same value as ~plantuml-jar-path~, which is desribed and set in [[* Use /PlantUML mode/][/PlantUML mode/ configuration]].
+2. Adding ~plantuml~ to the supported languages for [[https://orgmode.org/worg/org-contrib/babel/intro.html][Babel]].
+
 #+begin_src emacs-lisp
   (use-package org
     :custom
     (org-agenda-files (concat user-emacs-directory "org-agenda-files"))
+    (org-plantuml-jar-path plantuml-jar-path)
     (org-babel-load-languages
      '((emacs-lisp . t)
        (org . t)
+       (plantuml . t)
        (shell . t)))
     :config
     (let ((filename org-agenda-files))

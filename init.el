@@ -70,9 +70,11 @@
 (use-package org
   :custom
   (org-agenda-files (concat user-emacs-directory "org-agenda-files"))
+  (org-plantuml-jar-path plantuml-jar-path)
   (org-babel-load-languages
    '((emacs-lisp . t)
      (org . t)
+     (plantuml . t)
      (shell . t)))
   :config
   (let ((filename org-agenda-files))
