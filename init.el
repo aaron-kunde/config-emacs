@@ -69,7 +69,7 @@
   (ediff-fine-diff-C ((t (:extend t :background "#666600")))))
 (use-package org
   :custom
-  (org-agenda-files "~/.emacs.d/org-agenda-files")
+  (org-agenda-files (concat user-emacs-directory "org-agenda-files"))
   (org-babel-load-languages
    '((emacs-lisp . t)
      (org . t)

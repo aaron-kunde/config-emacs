@@ -227,21 +227,21 @@ Make some adjustment to the forground colors to increase readability on dark the
 Configuration of Org mode includes several steps:
 
 *** Agenda files
-The list of agenda files is specific to different environments and user accounts. Each user account has to define its own list of files as a textfile and put it under ~/.emacs.d/org-agenda-files~, like the following example:
+The list of agenda files is specific to different environments and user accounts. Each user account has to define its own list of files in a textfile ~org-agenda-files~ and put this in the user-specific emacs configuration directory (default: ~/.emacs.d~). The file ~org-agenda-files~ should like the following example:
 #+begin_example
 ~/Path to 1st directory/agenda file 1
 ~/Path to 1st directory/agenda file 2
 ~/Path to 2nd directory/agenda file 1
 ...
 #+end_example
-If the file does not exist, it is created.
+If the file does not exist, it is created during startup.
 
 *** Enable visual-line-mode
 Since Org mode is for editing texts, visual line mode with word wrap is enabled:
 #+begin_src emacs-lisp
   (use-package org
     :custom
-    (org-agenda-files "~/.emacs.d/org-agenda-files")
+    (org-agenda-files (concat user-emacs-directory "org-agenda-files"))
     (org-babel-load-languages
      '((emacs-lisp . t)
        (org . t)
