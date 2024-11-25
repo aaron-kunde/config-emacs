@@ -341,3 +341,11 @@ Install [[https://github.com/bbatsov/adoc-mode/][adoc-mode]]:
 #+begin_src emacs-lisp
   (use-package adoc-mode)
 #+end_src
+
+** Use /Gnuplot for Emacs/
+Install [[https://github.com/emacs-gnuplot/gnuplot][Gnuplot for Emacs]]:
+#+begin_src emacs-lisp
+  (use-package gnuplot)
+#+end_src
+
+*Note*: The mode is not associated to any files yet. Therefore it has to be started with ~M-x gnuplot-mode~ for the current buffer, or with ~M-x gnuplot-make-buffer~ in a new buffer.

@@ -99,3 +99,4 @@
 (use-package docker-compose-mode)
 (use-package json-mode)
 (use-package adoc-mode)
+(use-package gnuplot)
