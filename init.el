@@ -100,3 +100,4 @@
 (use-package json-mode)
 (use-package adoc-mode)
 (use-package gnuplot)
+(use-package lua-mode)

@@ -349,3 +349,9 @@ Install [[https://github.com/emacs-gnuplot/gnuplot][Gnuplot for Emacs]]:
 #+end_src
 
 *Note*: The mode is not associated to any files yet. Therefore it has to be started with ~M-x gnuplot-mode~ for the current buffer, or with ~M-x gnuplot-make-buffer~ in a new buffer.
+
+** Use /lua-mode/
+Install [[https://immerrr.github.io/lua-mode/][Lua-mode]]:
+#+begin_src emacs-lisp
+  (use-package lua-mode)
+#+end_src
