@@ -96,13 +96,13 @@ Refresh package cache if not done yet:
   (unless package-archive-contents (package-refresh-contents))
 #+end_src
 
-** Use /use-package/
+** Use use-package
 Install [[https://github.com/jwiegley/use-package][use-package]], if not done yet:
 #+begin_src emacs-lisp
   (unless (package-installed-p 'use-package) (package-install 'use-package))
 #+end_src
 
-Initialise /use-package/:
+Initialise use-package:
 #+begin_src emacs-lisp
   (eval-when-compile (require 'use-package))
 #+end_src
@@ -114,27 +114,27 @@ Install [[https://elpa.gnu.org/packages/gnu-elpa-keyring-update.html][gnu-elpa-k
     :config  (setq package-check-signature 'allow-unsigned))
 #+end_src
 
-*Note*: If /gnu-elpa-keyring-update/ cannot be installed, because of expired signatures, the signature check can be temporary disabled, like described in the [[https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1970090.html][Debian mailing list]]:
+*Note*: If gnu-elpa-keyring-update cannot be installed, because of expired signatures, the signature check can be temporary disabled, like described in the [[https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1970090.html][Debian mailing list]]:
 #+begin_src emacs-lisp :tangle no
   (setq package-check-signature nil)
 #+end_src
 
-* Customize /EasyPG/
-Configuring EasyPG, like it is described in the [[https://www.gnu.org/software/emacs/manual/html_node/epa/GnuPG-Pinentry.html][Emacs manual]]. This way, the passphase is asced in the minibuffer:
+* Customize EasyPG
+Configuring [[https://www.gnu.org/software/emacs/manual/html_node/epa/index.html][EasyPG]], like it is described in the [[https://www.gnu.org/software/emacs/manual/html_node/epa/GnuPG-Pinentry.html][Emacs manual]]. This way, the passphase is asced in the minibuffer:
 #+begin_src emacs-lisp
   (use-package epg
     :custom
     (epg-pinentry-mode 'loopback))
 #+end_src
 
-* Use /which-key/
+* Use which-key
 Install and counfigure [[https://github.com/justbur/emacs-which-key][which-key]] minor mode to display current awailable key bindings while typing:
 #+begin_src emacs-lisp
   (use-package which-key
     :config  (which-key-mode))
 #+end_src
 
-* Use /counsel/, /ivy/ and /swiper/
+* Use Counsel, Ivy and Swiper
 Install and configure [[https://github.com/abo-abo/swiper?tab=readme-ov-file#counsel][Counsel]] along with [[https://github.com/abo-abo/swiper?tab=readme-ov-file#ivy][Ivy]] and [[https://github.com/abo-abo/swiper?tab=readme-ov-file#swiper][Swiper]]:
 #+begin_src emacs-lisp
   (use-package counsel
@@ -144,14 +144,14 @@ Install and configure [[https://github.com/abo-abo/swiper?tab=readme-ov-file#cou
     :config (counsel-mode))
 #+end_src
 
-Install [[https://github.com/Yevgnen/ivy-rich][ivy-rich]], to have more [[https://oremacs.com/swiper/][actions]] with ~M-o~ and better UI in the minibuffer for ivy completions:
+Install [[https://github.com/Yevgnen/ivy-rich][ivy-rich]], to have more actions with /M-o/ and better UI in the minibuffer for Ivy and Counsel completions:
 #+begin_src emacs-lisp
   (use-package ivy-rich
     :config (ivy-rich-mode))
 #+end_src
 
-* Use /helpful/
-Install [[https://github.com/Wilfred/helpful][helpful]] to enhance Emacs help with more contextual information:
+* Use Helpful
+Install [[https://github.com/Wilfred/helpful][Helpful]] to enhance Emacs help with more contextual information:
 #+begin_src emacs-lisp
   (use-package helpful
     :commands
@@ -171,27 +171,27 @@ Install [[https://github.com/Wilfred/helpful][helpful]] to enhance Emacs help wi
     ("C-h C-x d" . helpful-at-point))
 #+end_src
 
-* Use /projectile/
-Install [[https://github.com/bbatsov/projectile][projectile]]:
+* Use Projectile
+Install [[https://github.com/bbatsov/projectile][Projectile]]:
 #+begin_src emacs-lisp
   (use-package projectile
     :config (projectile-mode)
     :bind-keymap ("C-c p" . projectile-command-map))
 #+end_src
 
-Integrate /projectile/ with [[* Use /counsel/][counsel]]:
+Integrate Projectile with [[* Use /counsel/][Counsel]]:
 #+begin_src emacs-lisp
   (use-package counsel-projectile
     :config (counsel-projectile-mode))
 #+end_src
 
-* Use /Magit/
+* Use Magit
 Install [[https://magit.vc/][Magit]] to have a nice Git integration:
 #+begin_src emacs-lisp
   (use-package magit)
 #+end_src
 
-* Customize /Ediff/
+* Customize Ediff
 Make some adjustment to the forground colors to increase readability on dark themes:
 
 | Original color         | Saturation | Lightness | New colour | Saturation | Lightness |
@@ -223,9 +223,9 @@ Make some adjustment to the forground colors to increase readability on dark the
 #+end_src
 
 * Editing modes
-** Use /Org mode/
+** Use Org Mode
 *** Agenda files
-The list of agenda files is specific to different environments and user accounts. Each user account has to define its own list of files in a textfile ~org-agenda-files~ and put this in the user-specific emacs configuration directory (default: ~/.emacs.d~). The file ~org-agenda-files~ should like the following example:
+The list of agenda files is specific to different environments and user accounts. Each user account has to define its own list of files in a textfile ~org-agenda-files~ and put this in the user-specific emacs configuration directory (default: ~$HOME/.emacs.d~). The file ~org-agenda-files~ should like the following example:
 #+begin_example
 ~/Path to 1st directory/agenda file 1
 ~/Path to 1st directory/agenda file 2
@@ -234,7 +234,7 @@ The list of agenda files is specific to different environments and user accounts
 #+end_example
 If the file does not exist, it is created during startup.
 
-*** Enable /visual-line-mode/
+*** Enable Visual Line Mode
 Since Org mode is for editing texts, visual line mode with word wrap is enabled:
 
 *** Integrate with PlantUML
@@ -259,27 +259,28 @@ Based on [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-plantuml.
     :hook (org-mode . visual-line-mode))
 #+end_src
 
-** Use /csv-mode/
-Install [[https://elpa.gnu.org/packages/csv-mode.html][csv-mode]]:
+** Use CSV Mode
+Install [[https://elpa.gnu.org/packages/csv-mode.html][CSV Mode]]:
 #+begin_src emacs-lisp
   (use-package csv-mode)
 #+end_src
 
-** Use /yaml-mode/
-Install [[https://melpa.org/#/yaml-mode][yaml-mode]]:
+** Use yaml-mode
+Install [[https://github.com/yoshiki/yaml-mode][yaml-mode]]:
 #+begin_src emacs-lisp
   (use-package yaml-mode)
 #+end_src
 
-** Use /bats-mode/
+** Use bats-mode
 Install [[https://github.com/dougm/bats-mode][bats-mode]]:
 #+begin_src emacs-lisp
   (use-package bats-mode)
 #+end_src
 
-** Use /PlantUML mode/
-Install [[https://github.com/skuro/plantuml-mode][plantuml-mode]] without [[https://github.com/plantuml/plantuml-server][plantuml-server]]:
-- The default execution mode is set to ~jar~, because communication to the server seems to be broken at this time. - Indentation level is set to 2.
+** Use PlantUML mode
+Install [[https://github.com/skuro/plantuml-mode][PlantUML mode]] without [[https://github.com/plantuml/plantuml-server][PlantUML Server]]:
+- The default execution mode is set to ~jar~, because communication to the server seems to be broken at this time.
+- Indentation level is set to 2.
 - The output type is set to ~png~, since SVG images are transparent and black lines are not seen in a preview window with black (or dark) background:
 - The Plantuml JAR is set to the local ~plantuml.jar~
 
@@ -294,55 +295,55 @@ Install [[https://github.com/skuro/plantuml-mode][plantuml-mode]] without [[http
     (setq plantuml-output-type "png"))
 #+end_src
 
-** Use /go-mode/
+** Use go-mode
 Install [[https://github.com/dominikh/go-mode.el][go-mode]] further descriped in [[https://www.emacswiki.org/emacs/GoLangMode][Go Lang Mode]]:
 #+begin_src emacs-lisp
   (use-package go-mode)
 #+end_src
 
-** Use /markdown-mode/
-Install [[https://jblevins.org/projects/markdown-mode/][markdown-mode]]:
+** Use Markdown Mode
+Install [[https://jblevins.org/projects/markdown-mode/][Markdown Mode]]:
 #+begin_src emacs-lisp
   (use-package markdown-mode)
 #+end_src
 
-** Use /groovy-mode/
+** Use groovy-mode
 Intall [[https://github.com/Groovy-Emacs-Modes/groovy-emacs-modes][standalone groovy-mode]]:
 #+begin_src emacs-lisp
   (use-package groovy-mode)
 #+end_src
 
-** Use /powershell/
-Install [[https://github.com/jschaf/powershell.el][Mode for powershell]]:
+** Use PowerShell Mode
+Install [[https://github.com/jschaf/powershell.el][PowerShell Mode]]:
 #+begin_src emacs-lisp
   (use-package powershell)
 #+end_src
 
-** Use /dockerfile-mode/
+** Use dockerfile-mode
 Install [[https://github.com/spotify/dockerfile-mode][dockerfile-mode]]:
 #+begin_src emacs-lisp
   (use-package dockerfile-mode)
 #+end_src
 
-** Use /docker-compose-mode/
+** Use docker-compose-mode
 Install [[https://github.com/meqif/docker-compose-mode][docker-compose-mode]]:
 #+begin_src emacs-lisp
   (use-package docker-compose-mode)
 #+end_src
 
-** Use /json-mode/
+** Use json-mode
 Install [[https://github.com/json-emacs/json-mode][json-mode]]:
 #+begin_src emacs-lisp
   (use-package json-mode)
 #+end_src
 
-** Use /adoc-mode/
+** Use adoc-mode
 Install [[https://github.com/bbatsov/adoc-mode/][adoc-mode]]:
 #+begin_src emacs-lisp
   (use-package adoc-mode)
 #+end_src
 
-** Use /Gnuplot for Emacs/
+** Use Gnuplot for Emacs
 Install [[https://github.com/emacs-gnuplot/gnuplot][Gnuplot for Emacs]]:
 #+begin_src emacs-lisp
   (use-package gnuplot)
@@ -350,7 +351,7 @@ Install [[https://github.com/emacs-gnuplot/gnuplot][Gnuplot for Emacs]]:
 
 *Note*: The mode is not associated to any files yet. Therefore it has to be started with ~M-x gnuplot-mode~ for the current buffer, or with ~M-x gnuplot-make-buffer~ in a new buffer.
 
-** Use /lua-mode/
+** Use Lua-mode
 Install [[https://immerrr.github.io/lua-mode/][Lua-mode]]:
 #+begin_src emacs-lisp
   (use-package lua-mode)
