@@ -128,14 +128,14 @@ Configuring EasyPG, like it is described in the [[https://www.gnu.org/software/e
 #+end_src
 
 * Use /which-key/
-Install and counfigure [[https://github.com/justbur/emacs-which-key][which-key]] to display current awailable key bindings while typing:
+Install and counfigure [[https://github.com/justbur/emacs-which-key][which-key]] minor mode to display current awailable key bindings while typing:
 #+begin_src emacs-lisp
   (use-package which-key
     :config  (which-key-mode))
 #+end_src
 
 * Use /counsel/, /ivy/ and /swiper/
-Install and configure [[https://github.com/abo-abo/swiper][counsel]] along with ivy and swiper:
+Install and configure [[https://github.com/abo-abo/swiper?tab=readme-ov-file#counsel][Counsel]] along with [[https://github.com/abo-abo/swiper?tab=readme-ov-file#ivy][Ivy]] and [[https://github.com/abo-abo/swiper?tab=readme-ov-file#swiper][Swiper]]:
 #+begin_src emacs-lisp
   (use-package counsel
     :bind
