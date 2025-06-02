@@ -101,3 +101,11 @@
 (use-package adoc-mode)
 (use-package gnuplot)
 (use-package lua-mode)
+(use-package lsp-mode
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :commands lsp
+  :hook (
+	 (lsp-mode . lsp-enable-which-key-integration)
+	 (sh-mode . lsp)
+	 ))
