@@ -361,12 +361,13 @@ Install [[https://immerrr.github.io/lua-mode/][Lua-mode]]:
 Install [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]] with the prefix /C-c l/ for LSP commands and activate integration with [[* Use /which-key/][which-key]].
 
 The folling [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]] are added to be usedthe LSP mode:
-- [[https://emacs-lsp.github.io/lsp-mode/page/lsp-bash/][Bash]]: Based on https://github.com/bash-lsp/bash-language-server, [[https://www.shellcheck.net/][ShellCheck]] should be installed before as a dependency.
+- [[https://emacs-lsp.github.io/lsp-mode/page/lsp-bash/][Bash]]: Installation of https://github.com/bash-lsp/bash-language-server, [[https://www.shellcheck.net/][ShellCheck]] should be installed before as a dependency.
 
+*Note*: It is necessary, that [[https://nodejs.org/][Node.js]] is set up and that the command ~npm i -g <language-server>~ can be executed!
 #+begin_src emacs-lisp
   (use-package lsp-mode
-    :init
-    (setq lsp-keymap-prefix "C-c l")
+    :custom
+    (lsp-keymap-prefix "C-c l")
     :commands lsp
     :hook (
 	   (lsp-mode . lsp-enable-which-key-integration)
