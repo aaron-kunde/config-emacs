@@ -52,6 +52,9 @@
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
 (use-package magit)
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
 (use-package ediff
   :defer t
   :custom-face
@@ -106,6 +109,5 @@
   (lsp-keymap-prefix "C-c l")
   :commands lsp
   :hook (
-	 (lsp-mode . lsp-enable-which-key-integration)
 	 (sh-mode . lsp)
 	 ))

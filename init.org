@@ -191,6 +191,17 @@ Install [[https://magit.vc/][Magit]] to have a nice Git integration:
   (use-package magit)
 #+end_src
 
+* Use Flycheck
+Use [[https://www.flycheck.org][Flycheck]] over [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Flymake.html][Flymake]], since it seems having more features according to [[https://www.flycheck.org/en/latest/user/flycheck-versus-flymake.html][this comparison]].
+Install Flycheck and initialize it, to enable always syntax checking with Flycheck.
+
+*Note*: For optimal Bash support, [[https://www.shellcheck.net/][ShellCheck]] should be installed before as a dependency.
+#+begin_src emacs-lisp
+  (use-package flycheck
+    :ensure t
+    :init (global-flycheck-mode))
+#+end_src
+
 * Customize Ediff
 Make some adjustment to the forground colors to increase readability on dark themes:
 
@@ -358,10 +369,10 @@ Install [[https://immerrr.github.io/lua-mode/][Lua-mode]]:
 #+end_src
 
 * Use LSP Mode
-Install [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]] with the prefix /C-c l/ for LSP commands and activate integration with [[* Use /which-key/][which-key]].
+Install [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]] with the prefix /C-c l/ for LSP commands. Since integration with [[* Use /which-key/][which-key]] seems to work out of the box.
 
 The folling [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]] are added to be usedthe LSP mode:
-- [[https://emacs-lsp.github.io/lsp-mode/page/lsp-bash/][Bash]]: Installation of https://github.com/bash-lsp/bash-language-server, [[https://www.shellcheck.net/][ShellCheck]] should be installed before as a dependency.
+- [[https://emacs-lsp.github.io/lsp-mode/page/lsp-bash/][Bash]]: Installation of https://github.com/bash-lsp/bash-language-server. *Note*: [[https://www.shellcheck.net/][ShellCheck]] should be installed before as a dependency.
 
 *Note*: It is necessary, that [[https://nodejs.org/][Node.js]] is set up and that the command ~npm i -g <language-server>~ can be executed!
 #+begin_src emacs-lisp
@@ -370,7 +381,6 @@ The folling [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]] 
     (lsp-keymap-prefix "C-c l")
     :commands lsp
     :hook (
-	   (lsp-mode . lsp-enable-which-key-integration)
 	   (sh-mode . lsp)
 	   ))
 #+end_src
