@@ -27,7 +27,10 @@
   :bind
   ("C-s" . swiper-isearch)
   ("C-x b" . counsel-switch-buffer)
-  :config (counsel-mode))
+  :config
+  (ivy-mode t)
+  (counsel-mode t)
+  )
 (use-package ivy-rich
   :config (ivy-rich-mode t))
 (use-package helpful

@@ -135,13 +135,16 @@ Install and activate [[https://github.com/justbur/emacs-which-key][which-key]] m
 #+end_src
 
 * Use Counsel, Ivy and Swiper
-Install and configure [[https://github.com/abo-abo/swiper?tab=readme-ov-file#counsel][Counsel]] along with [[https://github.com/abo-abo/swiper?tab=readme-ov-file#ivy][Ivy]] and [[https://github.com/abo-abo/swiper?tab=readme-ov-file#swiper][Swiper]]:
+Install [[https://github.com/abo-abo/swiper?tab=readme-ov-file#counsel][Counsel]] along with [[https://github.com/abo-abo/swiper?tab=readme-ov-file#ivy][Ivy]] and [[https://github.com/abo-abo/swiper?tab=readme-ov-file#swiper][Swiper]]. Set keys for invoking search with Swiper to /C-s/ and switching buffer with Counsel and Swiper to /C-x b/. Activate Ivy and Counsel minor mode globally:
 #+begin_src emacs-lisp
   (use-package counsel
     :bind
     ("C-s" . swiper-isearch)
     ("C-x b" . counsel-switch-buffer)
-    :config (counsel-mode))
+    :config
+    (ivy-mode t)
+    (counsel-mode t)
+    )
 #+end_src
 
 Install [[https://github.com/Yevgnen/ivy-rich][ivy-rich]] and activate it, to have more actions with /M-o/ and better UI in the minibuffer for Ivy and Counsel completions:
