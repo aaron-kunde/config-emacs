@@ -372,9 +372,9 @@ Install [[https://immerrr.github.io/lua-mode/][Lua-mode]]:
 #+end_src
 
 * Use LSP Mode
-Install [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]] with the prefix /C-c l/ for LSP commands. Since integration with [[* Use /which-key/][which-key]] seems to work out of the box.
+Install [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]] and the the prefix for LSP commands to /C-c l/. Integration with [[* Use /which-key/][which-key]] seems to work out of the box, so nothing is configured for it.
 
-The folling [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]] are added to be usedthe LSP mode:
+The following [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]] are added to be used within LSP mode:
 - [[https://emacs-lsp.github.io/lsp-mode/page/lsp-bash/][Bash]]: Installation of https://github.com/bash-lsp/bash-language-server. *Note*: [[https://www.shellcheck.net/][ShellCheck]] should be installed before as a dependency.
 
 *Note*: It is necessary, that [[https://nodejs.org/][Node.js]] is set up and that the command ~npm i -g <language-server>~ can be executed!
