@@ -22,14 +22,14 @@
   :custom
   (epg-pinentry-mode 'loopback))
 (use-package which-key
-  :config  (which-key-mode))
+  :config (which-key-mode t))
 (use-package counsel
   :bind
   ("C-s" . swiper-isearch)
   ("C-x b" . counsel-switch-buffer)
   :config (counsel-mode))
 (use-package ivy-rich
-  :config (ivy-rich-mode))
+  :config (ivy-rich-mode t))
 (use-package helpful
   :commands
   (helpful-callable
@@ -47,7 +47,7 @@
   ([remap describe-key] . helpful-key)
   ("C-h C-x d" . helpful-at-point))
 (use-package projectile
-  :config (projectile-mode)
+  :config (projectile-mode t)
   :bind-keymap ("C-c p" . projectile-command-map))
 (use-package counsel-projectile
   :config (counsel-projectile-mode))
