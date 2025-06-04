@@ -374,8 +374,9 @@ Install [[https://immerrr.github.io/lua-mode/][Lua-mode]]:
 * Use LSP Mode
 Install [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]] and the the prefix for LSP commands to /C-c l/. Integration with [[* Use /which-key/][which-key]] seems to work out of the box, so nothing is configured for it.
 
-The following [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]] are added to be used within LSP mode:
-- [[https://emacs-lsp.github.io/lsp-mode/page/lsp-bash/][Bash]]: Installation of https://github.com/bash-lsp/bash-language-server. *Note*: [[https://www.shellcheck.net/][ShellCheck]] should be installed before as a dependency.
+The following [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]] are added to be used within LSP Mode:
+- [[* Bash][Bash]]
+- [[* Java][Java]]
 
 *Note*: It is necessary, that [[https://nodejs.org/][Node.js]] is set up and that the command ~npm i -g <language-server>~ can be executed!
 #+begin_src emacs-lisp
@@ -385,6 +386,7 @@ The following [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]
     :commands lsp
     :hook (
 	   (sh-mode . lsp)
+	   (java-mode . lsp)
 	   ))
 #+end_src
 
@@ -394,4 +396,18 @@ Enable [[https://github.com/emacs-lsp/lsp-ivy][LSP Ivy integration]], to have lo
   (use-package lsp-ivy
     :commands lsp-ivy-workspace-symbol
     )
+#+end_src
+
+** Language support
+*** Bash
+[[https://emacs-lsp.github.io/lsp-mode/page/lsp-bash/][Bash LSP support]] requires an installation of https://github.com/bash-lsp/bash-language-server, which is done by registering the ~lsp~ command to the ~sh-mode~ in a hook.
+
+*Note*: [[https://www.shellcheck.net/][ShellCheck]] should be installed before as a dependency.
+
+*** Java
+[[https://emacs-lsp.github.io/lsp-java/][Java LSP support]] requires an installation of https://projects.eclipse.org/projects/eclipse.jdt.ls, which is done by installing the package lsp-java.
+
+*Note*: A JDK 17 and Maven is required and must be installed before, so that the command ~mvn --version~ can be executed!
+#+begin_src emacs-lisp
+  (use-package lsp-java)
 #+end_src

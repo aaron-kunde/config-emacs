@@ -113,7 +113,9 @@
   :commands lsp
   :hook (
 	 (sh-mode . lsp)
+	 (java-mode . lsp)
 	 ))
 (use-package lsp-ivy
   :commands lsp-ivy-workspace-symbol
   )
+(use-package lsp-java)
