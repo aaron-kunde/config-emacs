@@ -387,3 +387,11 @@ The following [[https://emacs-lsp.github.io/lsp-mode/page/languages/][languages]
 	   (sh-mode . lsp)
 	   ))
 #+end_src
+
+** Ivy integration
+Enable [[https://github.com/emacs-lsp/lsp-ivy][LSP Ivy integration]], to have local workspace symbols for auto-completion with Ivy:
+#+begin_src emacs-lisp
+  (use-package lsp-ivy
+    :commands lsp-ivy-workspace-symbol
+    )
+#+end_src
